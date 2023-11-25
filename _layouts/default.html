@@ -1,0 +1,71 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+
+<!-- Head -->
+{% include head.html %}
+<!-- End Head -->
+
+<body class="{{page.layout | slugify}}">
+
+<!-- Off Canvas Wrapper -->
+<div class="off-canvas-wrapper">
+
+<!-- Off Canvas Navigation -->
+<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap" data-close-on-click="false" data-content-scroll="false">
+{% include off-canvas.html %}
+</div>
+<!-- End Off Canvas Navigation -->
+
+<div class="off-canvas-content" data-off-canvas-content>
+<nav>
+<!-- Navigation -->
+{% include navigation.html %}
+<!-- End Navigation -->
+</nav>
+
+<main>
+<!-- Content -->
+{{ content }}
+<!-- End Content -->
+</main>
+
+<!-- Call to Action -->
+{% if page.has-call-to-action %}
+<section class="">
+  <div class="grid-container black-background">
+    <div class="grid-x grid-padding-x grid-padding-y align-center-middle white black-background">
+
+      <div class="small-12 medium-6 cell">
+        <h1>{{page.call-to-action-title}}</h1>
+        <h5>{{page.call-to-action-text}}</h5>
+        <h4 class="sans-regular yellow"><a href="mailto:{{page.call-to-action-email}}">{{page.call-to-action-email}}</a></h4>
+      </div>
+      <div class="small-12 medium-6 cell">
+        <lottie-player
+          src="/assets/animation/Animation - 1700362697929.json"
+          background="transparent"
+          speed="0.7"
+          autoplay loop
+        ></lottie-player>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- End Call to Action -->
+
+<!-- Footer -->
+{% include footer.html %}
+<!-- End Footer -->
+</div>
+
+
+<!-- End Off Canvas Wrapper -->
+</body>
+
+</html>

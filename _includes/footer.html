@@ -1,0 +1,31 @@
+
+
+<footer>
+
+<div class="primary-background-colour padding-vertical-1">
+  <div class="grid-x grid-padding-y grid-padding-x">
+    <div class="small-12 cell">
+      <ul class="menu align-center">
+        <li><a href="{{site.social.facebook}}" target="_blank"><svg class="icon icon-socials icon-facebook"><use xlink:href="/assets/icons/symbol-defs.svg#icon-facebook"></use></svg></a></li>
+        <li><a href="{{site.social.instagram}}" target="_blank"><svg class="icon icon-socials icon-instagram"><use xlink:href="/assets/icons/symbol-defs.svg#icon-instagram"></use></svg></a></li>
+        <li><a href="{{site.social.youtube}}" target="_blank"><svg class="icon icon-socials icon-youtube"><use xlink:href="/assets/icons/symbol-defs.svg#icon-youtube"></use></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-x grid-padding-y grid-padding-x align-center">
+    <div class="small-12 cell text-center">
+      <h5 class="yellow"><a href="https://hrsj.com.mx/">{{site.event-address}}</a></h5>
+      <h5 class="yellow"><a href="https://maps.app.goo.gl/Lx1dgvR2qoe1QcRYA">{{site.event-span}}</a></h5>
+      <ul class="menu align-center">
+      <!-- {% for item in site.sponsors %}
+        <li><a href="{{ item[1] }}" target="_blank" rel="noopener"><span class="show-for-sr">{{ item[0] }}</span><svg class="icon icon-sponsors icon-{{ item[0] }}"><use xlink:href="/assets/icons/symbol-defs.svg#icon-{{ item[0] }}"></use></svg></a></li>
+      {% endfor %} -->
+      </ul>
+      <ul class="menu align-center">
+      <li><small>© {{'now' | date: "%Y"}} {{site.company}}. Images © their respective owners.</small></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</footer>

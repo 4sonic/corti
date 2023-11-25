@@ -1,0 +1,598 @@
+//  Table of Contents:
+//
+//   1. Mixins
+//   2. Global
+//   3. Plugins
+//   4. Color
+//   5. Typography
+//   6. Navigation
+//   7. Off-canvas
+//   8. Layout
+//   9. Home
+//   10. Menu / Food
+//   11. Find Us
+//   12. Story
+//   13. Hire Us
+//   14. Contact
+//   15. Page
+//   16. Footer
+
+
+// 1. Mixins
+// ---------
+
+@mixin links ($link, $hover) {
+  a {
+    color: $link;
+    &:hover {
+      color: $hover;
+    }
+  }
+}
+
+// 2. Global
+// ---------
+
+body {
+  cursor: default;
+  font-kerning: normal;
+}
+
+svg {
+  max-width: 100%;
+}
+
+::selection {
+  background: $primary-color;
+  color: $white;
+}
+
+:focus {
+  outline: 0;
+}
+
+.grid-container{
+  background-color: $white;
+  @include breakpoint(small) {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  @include breakpoint(medium) {
+    padding-top: 1.5rem;
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+}
+
+p {
+  font-size: 18px;
+}
+// 3. Plugins
+// ----------
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: $primary-color;
+}
+
+
+// 4. Color
+// --------
+.transparent{
+  background-color: transparent;
+}
+
+.white {
+  color: $white;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.blue {
+  color: $blue;
+}
+
+.medium-gray {
+  color: $medium-gray;
+  @include links ($medium-gray, $black);
+}
+
+.light-gray {
+  color: $light-gray;
+}
+
+.dark-gray {
+  color: $dark-gray;
+  @include links ($dark-gray, $black);
+}
+
+.primary-background-colour {
+  background-color: $blue;
+}
+
+.primary-color {
+  color: get-color(primary);
+}
+
+.secondary-color {
+  color: get-color(secondary);
+}
+
+.yellow-background {
+  background-color: $yellow;
+}
+
+.green-background {
+  background-color: #397269;
+}
+
+.black-background{
+
+  background-color: #394372;
+  @include links ($yellow, $white);
+  @include breakpoint(small) {
+    padding-top: 3rem;
+  }
+  @include breakpoint(medium) {
+    padding-top: 0rem;
+  }
+}
+
+
+.light-gray-background {
+  background-color: $light-gray;
+}
+
+
+
+
+// 5. Typography
+// -------------
+.secondary-font {
+  font-family: $secondary-font-family;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+}
+
+.banner{
+  font-family: 'Sharp Sans No1 Black';
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  @include breakpoint(small) {
+    font-size: 2rem;
+  }
+  @include breakpoint(medium) {
+    font-size: 3.5rem;
+  }
+}
+
+.yellow-submarine {
+  font-family: $secondary-font-family;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+  font-family: 'YellowSubmarine';
+  color: $yellow;
+}
+
+
+.menu .menu-text {
+font-weight: normal;
+}
+
+strong, b {
+font-family: $sans-bold;
+}
+
+a {
+  transition: color .35s cubic-bezier(.39, .575, .565, 1);
+}
+
+.text-underline {
+  border-bottom: 1px solid get-color(primary);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  font-family: $sans-regular;
+}
+
+i, cite, em, var, address, dfn {
+  font-style: normal;
+}
+
+p {
+  a {
+    border-bottom: 1px solid get-color(primary);
+    transition: border-bottom .35s cubic-bezier(.39, .575, .565, 1);
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
+}
+
+.sans-regular {
+  font-family: $sans-regular;
+}
+
+.sans-bold {
+  font-family: $sans-bold;
+}
+
+// X. Header
+// ---------
+
+
+// X. Images
+// ---------
+
+
+// X. Offcanvas
+// ---------
+
+.off-canvas {
+  @include links ($white, $black)
+}
+
+// X. Content
+// ---------
+.services.content {
+  color: red;
+}
+
+
+
+// X. Clients
+// -----------
+
+.clients {
+  color: $medium-gray;
+  @include links ($medium-gray, $black);
+  border-top: 1px solid $light-gray;
+}
+
+.clients .icon {
+  font-size: 1.75rem;
+}
+
+
+// X. Footer
+// ---------
+footer {
+  border-top: 2px solid $light-gray;
+  color: $white;
+  @include links ($white, $yellow);
+}
+// 8. Layout
+// ---------
+
+.hero {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  @include breakpoint(small) {
+    height: 60vh;
+  }
+  @include breakpoint(medium) {
+    height: 60vh;
+  }
+  @include breakpoint(large) {
+    height: 75vh;
+  }
+}
+
+.navigation {
+  background-color: $white;
+  .cell {
+	z-index: 17;
+  }
+  @include links ($blue, $blue)
+}
+
+.hamburger-inner {
+  &,
+  &::before,
+  &::after {
+    background-color: $blue;
+  }
+}
+
+// 9. Home
+// -------
+
+.cta {
+  @include breakpoint(small) {
+    padding-bottom: 0rem;
+  }
+  @include breakpoint(medium) {
+    padding-bottom: 3rem;
+  }
+}
+
+
+
+
+
+.orbit-slide {
+  height: 100%;
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+.home .hamburger-inner {
+  &,
+  &::before,
+  &::after {
+    background-color: $blue;
+  }
+}
+
+$scrollhide-nav-transition-speed: 1s;
+
+.scrollhide-nav {
+  transition: transform $scrollhide-nav-transition-speed cubic-bezier(0.86, 0, 0.07, 1);
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+}
+
+
+
+.padding-vertical-space-1 {
+  @include breakpoint(small) {
+    @include padding(1, null, 1, null);
+  }
+  @include breakpoint(medium) {
+    @include padding(2, null, 2, null);
+  }
+  @include breakpoint(large) {
+    @include padding(2, null, 2, null);
+  }
+}
+
+.padding-space-1 {
+  @include breakpoint(small) {
+    @include padding(1, 1, 1, 1);
+  }
+  @include breakpoint(medium) {
+    @include padding(3, 3, 3, 3);
+  }
+  @include breakpoint(large) {
+    @include padding(5, 5, 5, 5);
+  }
+}
+
+.pagination-image {
+  background-size: cover;
+  background-position: top;
+}
+
+/*
+.home .orbit-controls {
+  width: 100vw;
+}
+
+.home .orbit-container {
+}
+
+.home .orbit-previous, .orbit-next {
+  height: 100%;
+  width: 50vw;
+}
+
+.home .orbit-previous {
+cursor: url('/assets/img/arrow-left.png') 16 16, auto !important;
+cursor: -webkit-image-set(
+url('/assets/img/arrow-left.png') 1x,
+url('/assets/img/arrow-left@2x.png') 2x,
+url('/assets/img/arrow-left@3x.png') 3x
+) 16 16, auto !important;
+}
+
+.home .orbit-next {
+cursor: url('/assets/img/arrow-right.png') 16 16, auto !important;
+cursor: -webkit-image-set(
+url('/assets/img/arrow-right.png') 1x,
+url('/assets/img/arrow-right@2x.png') 2x,
+url('/assets/img/arrow-right@3x.png') 3x
+) 16 16, auto !important;
+}
+*/
+
+.page__content {
+  h2:nth-child(n+2) {
+  margin-top: 2rem;
+  }
+  h3:nth-child(n+2) {
+  margin-top: 2rem;
+  }
+  img {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+}
+
+.page__content {
+  h2:nth-child(n+2) {
+  margin-top: 2rem;
+  }
+  h3:nth-child(n+2) {
+  margin-top: 2rem;
+  }
+  img {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+}
+
+.page__image {
+  @include breakpoint(small) {
+    height: 30vh;
+  }
+  @include breakpoint(medium) {
+    height: 60vh;
+  }
+  @include breakpoint(large) {
+    height: 70vh;
+  }
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+.page__image__careers {
+  @include breakpoint(small) {
+    height: 30vh;
+  }
+  @include breakpoint(medium) {
+    height: 60vh;
+  }
+  @include breakpoint(large) {
+    height: 70vh;
+  }
+  background-size: contain;
+  background-position: 50%;
+  background-color: red;
+}
+
+.page__home__image {
+  @include breakpoint(small) {
+    height: 30vh;
+  }
+  @include breakpoint(medium) {
+    height: 40vh;
+  }
+  @include breakpoint(large) {
+    height: 40vh;
+  }
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+.orbit-container, orbit {
+  @include breakpoint(small) {
+    height: 40vh;
+  }
+  @include breakpoint(medium) {
+    height: 60vh;
+  }
+  @include breakpoint(large) {
+    height: 75vh;
+  }
+}
+
+.carousel__container {
+  @include breakpoint(small) {
+    height: 35vh;
+  }
+  @include breakpoint(medium) {
+    height: 60vh;
+  }
+  @include breakpoint(large) {
+    height: 60vh;
+  }
+}
+
+.carousel {
+  height: 100%;
+}
+
+.carousel-image {
+  height: 100%;
+  @include breakpoint(small) {
+    width: 75%;
+  }
+  @include breakpoint(medium) {
+    width: 75%;
+  }
+  @include breakpoint(large) {
+    width: 66%;
+  }
+
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+
+.excerpt img {
+    opacity: 1.0;
+    transition: opacity .35s cubic-bezier(.39, .575, .565, 1);
+}
+
+.excerpt img:hover {
+    opacity: 1.9;
+}
+
+.orbit-previous, .orbit-next {
+color: $black;
+}
+
+// Extras
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:before {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-top: ($height / $width) * 100%;
+  }
+  > .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.image {
+  @include aspect-ratio (16, 9);
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+.excerpt {
+  @include aspect-ratio (6, 4);
+  background-size: cover;
+  background-position: 50%;
+  background-color: $light-gray;
+}
+
+
+// Navigation Menu
+
+.navigation{
+  li {
+   -webkit-transition: all 1s ease-in-out;
+   -moz-transition: all 1s ease-in-out;
+   -o-transition: all 1s ease-in-out;
+   transition: all 1s ease-in-out;
+  }
+
+
+     li li:hover {
+       @include breakpoint(small) {
+         background-color: transparent;
+       }
+       @include breakpoint(medium) {
+         background-color: transparent;
+       }
+       @include breakpoint(large) {
+         background-color: #DBEEF0;
+       }
+
+     }
+}
+
+
+// Gradient
+.gradient {
+  background-image: linear-gradient(0deg, rgba(0,82,204,1) 20%, rgba(38,132,255,1) 80%);
+}

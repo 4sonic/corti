@@ -1,0 +1,26 @@
+
+- title: Nuestro equipo
+  url: /careers/
+- title: Nuestros pacientes
+  url: /work/
+- title: Lo que hacemos
+  url: /services/
+  sublinks:
+    - title: Evaluación audiológica
+      url: /services/Evaluación-audiológica
+    - title: Emisiones otoacústicas
+      url: /services/Emisiones-otoacústicas/
+    - title: Potenciales auditivos
+      url: /services/Potenciales-auditivos/
+    - title: Tamiz auditivo neonatal
+      url: /services/Tamiz-auditivo-neonatal/
+    - title: Adaptación de auxiliares auditivos
+      url: /services/Adaptación-de-auxiliares-auditivos/
+    - title: Implante coclear
+      url: /services/implante-coclear/
+    - title: Terapia Auditivo Verbal
+      url: /services/Terapia-Auditivo-Verbal/
+- title: Blog
+  url: /blog/
+- title: Contacto
+  url: /contact/

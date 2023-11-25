@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<!-- Projects Intro -->
+<div class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y">
+    <div class="small-12 medium-12 cell">
+      <h1>{{page.title}}</h1>
+    </div>
+  </div>
+</div>
+<!-- End Projects Intro -->
+
+<!-- Home Selected Projects -->
+<div class="grid-container">
+
+  <div class="grid-x">
+    <div class="small-12 medium-8 cell">
+      <h2>{{page.subtitle}}</h2>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x grid-padding-y small-up-1 medium-up-2">
+    {% assign services = paginator.posts | where: "is-video-selected", "true" %}
+    {% for service in services %}
+      {% include blocks/prueba.html %}
+    {% endfor %}
+  </div>
+
+</div>
+<!-- End Home Selected Projects -->
+
+<!-- Pagination -->
+{% include pagination-collection.html %}
+<!-- End Pagination -->

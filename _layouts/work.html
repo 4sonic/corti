@@ -1,0 +1,58 @@
+---
+layout: default
+---
+<!-- Hero -->
+{% assign background-image = page.hero-image %}
+<section class="hero" {% include images/feature.html %}>
+  <div class="grid-x align-middle align-center" style="height: 100%;">
+    <div class="small-10  medium-8 large-6 cell text-center">
+      <h1 class="primary-font white" data-aos="none">{{page.hero-text}}</h1>
+    </div>
+  </div>
+</section>
+<!-- End Hero -->
+
+<!-- Projects Intro -->
+<div class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y align-center padding-vertical-space-1">
+    <div class="small-12 medium-12 cell text-center">
+      <h3>{{page.header}}</h3>
+    </div>
+  </div>
+</div>
+<!-- End Projects Intro -->
+
+<!-- Page Content -->
+{% if page.content %}
+<section class="grid-container">
+  <div class="grid-x grid-padding-x grid-padding-y align-center">
+    <div class="small-12 medium-10 cell page__content padding-bottom-2">
+      {{ page.content | replace: "/uploads", "https://earn-studios.imgix.net/uploads" | markdownify }}
+    </div>
+  </div>
+</section>
+{% endif %}
+<!-- End Page Content -->
+
+<!-- Home Selected Projects -->
+<div class="grid-container">
+
+  <div class="grid-x">
+    <div class="small-12 medium-8 cell">
+      <h2>{{page.selected-text}}</h2>
+    </div>
+  </div>
+
+  <div class="grid-x grid-padding-x grid-padding-y small-up-1 medium-up-2">
+    {% assign works = paginator.posts | where: "is-video-selected", "true" %}
+    {% for work in works %}
+      {% include blocks/excerpt.html %}
+    {% endfor %}
+  </div>
+
+</div>
+<!-- End Home Selected Projects -->
+
+<!-- Pagination -->
+{% include pagination-collection.html %}
+<!-- End Pagination -->
